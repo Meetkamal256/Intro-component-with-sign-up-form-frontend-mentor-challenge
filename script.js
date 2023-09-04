@@ -5,7 +5,7 @@ form.addEventListener('submit', e =>{
     // get user input
     const firstname = form['firstname'].value;
     const lastname = form['lastname'].value;
-    const email = form['email'].value.trim();
+    const email = form['email'].value;
     const password = form['password'].value;
     
     console.log('First Name:', firstname);
@@ -54,6 +54,6 @@ function removeError(field){
 }
 
 function isValid(email) {
-    const re = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-    return re.test(email);
-  }
+    const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return re.test(string(email).toLowerCase());
+}
